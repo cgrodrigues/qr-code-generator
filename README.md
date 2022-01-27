@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# QR Code Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This application generate QR Codes for each line in teh text area.
 
-## Available Scripts
+## Build using the libraries:
 
-In the project directory, you can run:
+THis is a React project build using the following libraries:
 
-### `npm start`
+npx create-react-app qr-code-generator
+npm install --save react-qr-code
+npm install --save bootstrap
+npm install --save react-bootstrap
+npm install --save @fortawesome/fontawesome-free
+npm install --save react-to-print
+npm install gh-pages --save-dev
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Deploy to githup pages:
 
-### `npm test`
+1. Add properties to package.json file:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+At the top level add the following line:
 
-### `npm run build`
+"homepage": "http://{username}.github.io/{repo-name}"
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+At the "scripts" level add:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build"
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Create a repo manualy on Github.
 
-### `npm run eject`
+3. In the project directory run the following commands:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/{username}/{repo-name}.git
+git push -u origin main
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Run the following command to deploy the solution on Github pages:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+npm run deploy
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
